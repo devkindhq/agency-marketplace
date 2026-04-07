@@ -1,0 +1,10 @@
+{
+  "name": "seo",
+  "version": "1.0.0",
+  "description": "SEO domain skills — search engine optimization, quality rater guidelines, and related skills",
+  "author": {
+    "name": "Ali Kazim"
+  },
+  "license": "MIT",
+  "keywords": ["seo", "search", "google"]
+}

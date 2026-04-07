@@ -1,0 +1,24 @@
+{
+  "name": "agency-marketplace",
+  "owner": {
+    "name": "Ali Kazim"
+  },
+  "metadata": {
+    "description": "Agency skills marketplace — Claude Code skills collection",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "seo",
+      "source": "./plugins/seo",
+      "description": "SEO domain skills — search engine optimization, quality rater guidelines, and related skills",
+      "version": "1.0.0",
+      "author": {
+        "name": "Ali Kazim"
+      },
+      "category": "seo",
+      "keywords": ["seo", "search", "google"]
+    }
+  ]
+}
