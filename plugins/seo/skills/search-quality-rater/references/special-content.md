@@ -303,4 +303,26 @@ For queries like [target], [citibank], [dmv], there are two equally strong inten
 
 ---
 
+## 11. Schema Markup — Restricted and Deprecated Types
+
+When evaluating or recommending structured data as part of improvement suggestions, apply these restrictions:
+
+**Deprecated — do not recommend:**
+- `HowTo` schema — Google deprecated HowTo rich results in September 2023. Pages using it will not receive rich results and the markup should be removed.
+
+**Restricted — only recommend for eligible site types:**
+- `FAQPage` schema — restricted since August 2023. Google only shows FAQ rich results for **government and health websites**. Do not recommend FAQPage schema for commercial, agency, ecommerce, or general informational sites — it will have no effect.
+
+**Still valid and recommendable for all eligible sites:**
+- `Article` + `BreadcrumbList` — blog posts, news articles
+- `ItemList` — best-of lists, comparison roundups
+- `Product` + `Review` + `AggregateRating` — product pages
+- `SoftwareApplication` — software/app landing pages
+- `LocalBusiness` — local/physical business pages
+- `Organization` / `Person` — entity/author disambiguation (important for E-E-A-T)
+
+**Note:** Schema markup signals to Google's systems but does not directly affect PQ rating. Recommend schema as part of Trustworthiness improvements (entity clarity, author verification), not as a primary quality lever.
+
+---
+
 *Source: Google Search Quality Evaluator Guidelines, September 2025. Sections: 4.5, 4.6, 9.3, 11.0, 15.0–15.4, 18.0, 23.0, and cross-cutting guidance throughout.*

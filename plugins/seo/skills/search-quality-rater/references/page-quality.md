@@ -437,7 +437,120 @@ Serves a beneficial purpose and achieves it **very well**. Distinguished from Hi
 
 ---
 
-## 11. Key Principles Summary
+## 11. MC Quality — Detailed Dimension Definitions
+
+When assessing the quality of Main Content, evaluate these five dimensions explicitly:
+
+### Effort
+The time, skill, and resources invested in creating the page. Importantly:
+- For written content: research depth, structure, and editorial care count
+- For functional pages (calculators, tools, games): the effort in *building the functionality* counts — not just the text
+- For forums and UGC pages: the *cumulative effort of all contributors* counts — a well-participated thread with 40 substantive replies represents high collective effort even if no single post is long
+- AI-generated content where the output is accepted and published with no human review = **zero effective effort** for purposes of MC quality
+- Automated/scaled generation of many similar pages = zero effort per page
+
+### Originality
+Does the content offer something new — a unique angle, original data, a synthesis not found elsewhere, a first-hand account — rather than merely restating what exists? Rephrased versions of other people's content, even if technically rewritten, score low on originality.
+
+### Talent / Skill
+Is the content executed well at a craft level? For written content: clear, accurate, engaging prose. For video: production quality and clear communication. For artistic content: quality of the creative work. For technical content: accuracy and clarity of explanation.
+
+### Accuracy
+Is the information correct? Does it align with well-established expert consensus where such consensus exists? For YMYL topics, inaccuracy is a direct Low or Lowest trigger even if other dimensions score high.
+
+### The "Use the Page" Rule
+Before finalising your MC quality assessment, **actually engage with the page's core function**:
+- Shopping page → go through the process of adding an item to the cart
+- Recipe page → read through to see if the recipe is usable as written
+- Calculator/tool → run a test calculation
+- Game → start playing
+- Q&A page → read the question and all answers
+
+Rate the MC based on the experience of *using* the page for its intended purpose, not just reading it.
+
+---
+
+## 12. Finding the Homepage
+
+When you need to evaluate the website (for reputation, about information, or context):
+
+**Procedure:**
+1. Start with the URL of the page being rated
+2. Strip the URL back to the domain root (e.g., `https://example.com/article/title` → `https://example.com`)
+3. If that 404s or redirects to something unrelated, try `https://www.example.com`
+4. If there are multiple candidates (e.g., a country subdomain and a root domain), use whichever gives more information about the specific page being rated
+
+**Why it matters:** The homepage anchors your site-level assessment — reputation research, About Us information, and contact details are all evaluated relative to what you find when you navigate to the site root.
+
+---
+
+## 13. Contact Information Requirements by Site Type
+
+The required level of contact/about information varies by site type. Use this table:
+
+| Site Type | Minimum expected contact info | Notes |
+|---|---|---|
+| Financial / transaction (shopping, banking, investment) | Payment methods, exchange/return policies, customer service contact | Missing these = significant Low signal; especially important for sites handling money |
+| Medical / health advice | Who wrote the content, professional credentials, disclaimer | Anonymity on medical advice sites = Low to Lowest depending on YMYL severity |
+| News / journalism | Publisher name, editorial staff (not necessarily individual bylines), contact email | Anonymous news sites with no publisher identity = Low |
+| Personal blog / creative | Name or stable pseudonym, some way to contact | Full anonymity is acceptable; a username with consistent history is fine |
+| Humor / satire / entertainment | Minimal — purpose is clear from the content | Do not penalise humor sites for limited formal contact info |
+| Forum / UGC | Platform-level contact info is sufficient; individual poster anonymity is normal and acceptable | |
+| Ordinary small business | Address, phone/email, hours | Missing all three = Low; missing one = acceptable if others present |
+
+**Key principle:** The contact information bar scales with the level of trust users must place in the site. A shopping site asking for payment details requires more accountability than a recipe blog.
+
+---
+
+## 14. Veto Gates — Automatic Rating Caps
+
+These three conditions **cap the overall PQ rating at Low regardless of how well other criteria score.** They are not just Low signals — they override an otherwise-passing evaluation:
+
+| Veto | Condition | Why it's a hard cap |
+|---|---|---|
+| **Affiliate without disclosure** | Page contains affiliate/monetized links with no clear disclosure to the user | Deceptive by design — hides financial interest from the reader |
+| **Title/content mismatch** | Title makes a claim the body doesn't support (clickbait) | Deceptive MC framing is a trust violation, not just a quality issue |
+| **Self-contradictory data** | Article presents data that contradicts itself without explanation | Signals unreliable sourcing, editorial failure, or AI hallucination left uncorrected |
+
+These map to the QRG's deceptive page design criteria but are called out explicitly here because they are easy to miss during holistic scoring — a page with strong E-E-A-T signals and a clean layout can still hit these.
+
+---
+
+## 15. Content Quality Calibration Examples
+
+Calibrated pass/fail examples for the most subjectively assessed MC quality items:
+
+**Topic Scope (Originality / Completeness)**
+- PASS: Article on "Complete SEO Guide" explicitly states in the intro what it covers and what it does not (e.g., "This guide covers on-page and technical SEO; link building is covered separately").
+- FAIL: Article titled "Complete SEO Guide" covers only title tags and meta descriptions with no scope disclosure.
+
+**Semantic Coherence (Flow / Effort)**
+- PASS: Each section builds on the previous with explicit bridging context. Advanced concepts reference earlier explanations.
+- FAIL: Article alternates between beginner definitions and advanced tactics with no bridging — different knowledge levels assumed in adjacent paragraphs.
+
+**Information Density (Originality / Effort)**
+- PASS: No filler preamble, consistent terminology throughout (picks one term and uses it).
+- FAIL: Opens with "In today's digital landscape..."; uses CTR / click-through rate / click rate interchangeably as if they are synonymous.
+
+**Source Hierarchy (Accuracy / Trust)**
+- PASS: Primary sources (official documentation, peer-reviewed papers) cited directly; secondary interpretations labelled as such.
+- FAIL: "Experts say..." with no named source; "studies show" with no citation.
+
+**Methodology Transparency (Accuracy)**
+- PASS: Original data includes sample size, time period, measurement method, and how results could be reproduced.
+- FAIL: "Our research proves X" with no methodology described.
+
+**Contrarian View (Originality)**
+- PASS: Challenges the consensus position with specific data, percentage figures, and named sources explaining the basis for disagreement.
+- FAIL: Acknowledges a different view exists ("some people think...") but provides no evidence and no engagement with the alternative.
+
+**Gap Filling (Originality)**
+- PASS: Covers questions that top-competing articles miss — evidenced by citing specific absent angles.
+- FAIL: Covers exactly the same sub-topics as the top 5 results on the same query.
+
+---
+
+## 16. Key Principles Summary
 
 1. **Any single Lowest criterion** is sufficient for a Lowest rating — you do not need multiple.
 2. **Presence of ads alone** is never grounds for a lower rating — sites need monetization.
