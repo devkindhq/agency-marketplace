@@ -315,11 +315,30 @@ E-E-A-T standards vary significantly by topic. YMYL (Your Money or Your Life) to
 - For product pages: the website itself is the creator
 
 ### Step 3: Research Reputation Independently
-- Search for the website or creator name in search engines
-- Look for independent reviews, news articles, references by others
-- Check if they are recognized by professional organizations or have received awards
-- Look for any reports of fraud, scams, deceptive behavior, or harm
-- For non-professional creators: look at comments from other users about the creator
+
+**Search operator technique** (what Google actually teaches raters to use):
+
+To find independent information about a site, exclude the site itself from results:
+- `[example.com -site:example.com]` — mentions of the domain anywhere except the site itself
+- `["example.com" -site:example.com]` — same, quoted for exactness
+- `[example.com reviews -site:example.com]` — reviews specifically
+- `["example.com" reviews -site:example.com]` — quoted + reviews
+
+For a content creator by name, substitute the site URL with the creator's name.
+
+**What to look for:**
+- Independent reviews, news articles, references by others
+- Recognition by professional organizations or industry awards
+- Reports of fraud, scams, deceptive behavior, or harm
+- For non-professional creators: comments from other creators or community members about them
+
+**Customer reviews — how to interpret them:**
+- Be skeptical of both positive AND negative reviews — anyone can write them
+- Read the *content* of reviews, not just the star rating or total count
+- Any legitimate business gets some negative reviews — this is normal and neutral
+- What matters: **credible patterns** of reports describing specific harm (fraud, undelivered goods, harmful advice, deceptive practices)
+- A handful of negative reviews among hundreds of positive ones ≠ a reputation problem
+- Absence of reviews for a small/new site = neutral, not negative
 
 ### Step 4: Verify Credentials Through the Content Itself
 - Does the content demonstrate genuine knowledge?

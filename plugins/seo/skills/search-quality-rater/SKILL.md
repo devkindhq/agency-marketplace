@@ -41,6 +41,7 @@ Determine:
 - **Page type:** informational article, product page, forum/UGC, news, health/medical, government, encyclopedia, entertainment, e-commerce, landing page, error page, other
 - **YMYL status:** Is this topic one where low-quality content could significantly harm health, finances, safety, or society? (Health/Safety, Financial Security, Government/Civics, Other YMYL)
 - **Beneficial purpose:** What was this page created to do?
+- **Site Reputation Abuse check:** Is this page third-party content (sponsored, affiliate, or guest content) hosted on a high-authority domain primarily to exploit that domain's ranking signals rather than serve users? If yes → Lowest regardless of content quality.
 
 ### Step 2 — Check for automatic Lowest
 
@@ -148,11 +149,11 @@ Always use this exact structure:
 
 #### Composite Score
 
-| Dimension | Score |
-|---|---|
-| E-E-A-T | [Very Low → Very High] |
-| PQ | [Lowest → Highest] |
-| NM | [FailsM → FullyM, or N/A] |
+| Dimension | Score | Numeric (optional) |
+|---|---|---|
+| E-E-A-T | [Very Low → Very High] | [0–10, where Lowest=0, Low=2, Medium=5, High=7.5, Highest=10] |
+| PQ | [Lowest → Highest] | [0–10 same scale] |
+| NM | [FailsM → FullyM, or N/A] | [FailsM=0, SM=2, MM=5, HM=8, FullyM=10] |
 
 **Overall Assessment:** [1-2 sentences: what this page is doing well and what would move it up a tier]
 
@@ -174,3 +175,36 @@ Always use this exact structure:
 - For news pages: factual accuracy and clear sourcing matter more than writing style
 - For review pages: first-hand experience signals are critical E-E-A-T evidence
 - When in doubt between two tiers, consider: "Would a typical user be notably better served by this page than a random page on this topic?" Yes → lean higher. No → lean lower.
+- **E-E-A-T is an evaluation framework, not a direct ranking signal.** A High PQ rating means the page deserves to rank well — it does not predict that Google's algorithm will surface it. Do not frame ratings as ranking predictions.
+
+---
+
+## AI Citability (Optional — outside QRG proper)
+
+*This section is not part of Google's QRG. Include only when the user explicitly asks about AI visibility, GEO, or whether the page would appear in AI Overviews / ChatGPT / Perplexity.*
+
+When requested, add this section to the report after the Composite Score:
+
+#### AI Citability Assessment *(supplemental — not QRG)*
+
+| Signal | Assessment | Notes |
+|---|---|---|
+| Direct answer position | [First 150 words / Mid-page / Buried] | Core answer should appear in the first 150 words to be citable by AI engines |
+| Passage quote-worthiness | [High/Medium/Low] | Are there standalone sentences that answer a question directly and completely? |
+| Entity clarity | [High/Medium/Low] | Are key entities (people, products, organisations) named explicitly rather than pronoun-referenced? |
+| Claim structure | [High/Medium/Low] | Are factual claims stated as discrete, verifiable sentences rather than embedded in prose? |
+| Data tables | [Present/Absent] | HTML tables with clear headers are the most extractable format for AI synthesis |
+| FAQ coverage | [Present/Absent] | Structured Q&A addressing follow-up questions AI engines typically ask next |
+| Original data | [Present/Absent] | First-party surveys, experiments, or datasets the AI engine can cite as a primary source |
+| Structured data / schema | [Present/Absent] | See `references/special-content.md` for eligible schema types |
+
+**AI engine citation priorities:**
+
+| Engine | Highest-weight signals |
+|---|---|
+| Google AI Overviews | Direct answer in first paragraph, FAQ structure, data tables, valid schema |
+| ChatGPT Browse | Direct answer, precise data points, original data, external citations |
+| Perplexity | Original data, source hierarchy transparency, methodology disclosed |
+| Claude | Precise claims with evidence, reasoning transparency, source quality, acknowledged limitations |
+
+**AI Citability Summary:** [1 sentence on overall AI citation readiness and top 1-2 changes that would improve it]
