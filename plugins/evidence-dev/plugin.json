@@ -1,0 +1,16 @@
+{
+  "name": "evidence-dev",
+  "version": "1.0.0",
+  "description": "Evidence.dev documentation skills — complete reference for charts, data components, inputs, maps, UI, data sources, core concepts, CLI and custom components",
+  "skills": [
+    "evidence-core-concepts",
+    "evidence-charts",
+    "evidence-data-components",
+    "evidence-inputs",
+    "evidence-maps",
+    "evidence-ui",
+    "evidence-data-sources",
+    "evidence-cli",
+    "evidence-custom"
+  ]
+}
