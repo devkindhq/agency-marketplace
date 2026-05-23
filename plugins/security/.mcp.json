@@ -1,0 +1,10 @@
+{
+  "whatweb": {
+    "command": "docker",
+    "args": ["run", "-i", "--rm", "devkind/whatweb-mcp:latest"]
+  },
+  "theharvester": {
+    "command": "docker",
+    "args": ["run", "-i", "--rm", "devkind/theharvester-mcp:latest"]
+  }
+}

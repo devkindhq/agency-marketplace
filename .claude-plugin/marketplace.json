@@ -30,6 +30,17 @@
       },
       "category": "seo",
       "keywords": ["seo", "search", "google"]
+    },
+    {
+      "name": "security",
+      "source": "./plugins/security",
+      "description": "Security and reconnaissance tools — web technology fingerprinting via WhatWeb (1800+ plugins)",
+      "version": "1.1.0",
+      "author": {
+        "name": "Ali Kazim"
+      },
+      "category": "security",
+      "keywords": ["security", "reconnaissance", "tech-detection", "wappalyzer", "whatweb"]
     }
   ]
 }
