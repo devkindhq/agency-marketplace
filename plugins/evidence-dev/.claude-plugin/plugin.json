@@ -1,0 +1,10 @@
+{
+  "name": "evidence-dev",
+  "version": "1.0.1",
+  "description": "Evidence.dev documentation skills — complete reference for charts, data components, inputs, maps, UI, data sources, core concepts, CLI and custom components",
+  "author": {
+    "name": "Ali Kazim"
+  },
+  "license": "MIT",
+  "keywords": ["evidence", "analytics", "charts", "sql", "reporting"]
+}

@@ -13,7 +13,7 @@
       "name": "evidence-dev",
       "source": "./plugins/evidence-dev",
       "description": "Evidence.dev documentation skills — charts, data components, inputs, maps, UI, data sources, core concepts, CLI and custom components",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Ali Kazim"
       },
