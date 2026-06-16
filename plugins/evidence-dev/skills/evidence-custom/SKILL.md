@@ -4,6 +4,12 @@ description: Evidence.dev custom components and plugins — creating Svelte comp
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Create a custom Evidence.dev component ("make a custom chart", "build a reusable Svelte component")
+- Create or publish an Evidence.dev plugin
+- Extend Evidence.dev with custom functionality beyond built-in components
+
 # Evidence Custom Components & Plugins
 
 ## Level 1 — What are custom components, and when do you need them?
@@ -339,3 +345,6 @@ After registering, restart the dev server and configure the connection at `local
 - [ ] Flag each component with `export const evidenceInclude = true` in a `context="module"` script block
 - [ ] Export all components from `src/lib/index.js`
 - [ ] Set package name and version in `package.json` before `npm publish`
+
+## Parallelisation
+Generally safe — writes to components/*.svelte files. Avoid running alongside other agents editing the same component file.

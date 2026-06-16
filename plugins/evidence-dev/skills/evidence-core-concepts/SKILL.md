@@ -4,6 +4,12 @@ description: Evidence.dev core concepts — SQL queries in markdown, templated p
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Create a new Evidence.dev page or report from scratch
+- Understand how Evidence.dev pages, queries, and components fit together
+- Start a new Evidence.dev project or understand its structure
+
 # Evidence Core Concepts
 
 Evidence is a code-based BI framework. You write `.md` files that mix standard Markdown, SQL queries, and Svelte-style components. Evidence compiles those files into a static web app where every chart and value is backed by real query results.
@@ -617,3 +623,6 @@ QUERY FUNCTIONS (experimental)
   data={q.limit(5)}
   data={q.groupBy(["col"]).agg({sum: "sales"})}
 ```
+
+## Parallelisation
+Safe — this skill is a reference. Applying it (creating .md files) is safe if agents write to different page files.

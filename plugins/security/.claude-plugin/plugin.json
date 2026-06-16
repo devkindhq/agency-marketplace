@@ -1,10 +1,10 @@
 {
   "name": "security",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Security and reconnaissance tools — web technology fingerprinting, stack detection, and related skills",
   "author": {
     "name": "Ali Kazim"
   },
   "license": "MIT",
-  "keywords": ["security", "reconnaissance", "tech-detection", "wappalyzer", "whatweb"]
+  "keywords": ["security", "reconnaissance", "tech-detection", "whatweb", "theharvester", "mcp-server", "osint", "fingerprinting", "tech-stack"]
 }

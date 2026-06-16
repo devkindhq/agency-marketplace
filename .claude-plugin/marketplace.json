@@ -12,35 +12,35 @@
     {
       "name": "evidence-dev",
       "source": "./plugins/evidence-dev",
-      "description": "Evidence.dev documentation skills — charts, data components, inputs, maps, UI, data sources, core concepts, CLI and custom components",
-      "version": "1.0.1",
+      "description": "Claude Code skills for Evidence.dev — 9 skills covering SQL queries, charts, data components, maps, UI, data sources, CLI and custom Svelte components",
+      "version": "1.0.2",
       "author": {
         "name": "Ali Kazim"
       },
       "category": "analytics",
-      "keywords": ["evidence", "analytics", "charts", "sql", "reporting"]
+      "keywords": ["evidence-dev", "evidence", "analytics", "charts", "sql", "reporting", "bi", "business-intelligence", "svelte", "duckdb"]
     },
     {
       "name": "seo",
       "source": "./plugins/seo",
-      "description": "SEO domain skills — search engine optimization, quality rater guidelines, and related skills",
-      "version": "1.0.0",
+      "description": "Claude Code SEO skills — evaluate content against Google Search Quality Evaluator Guidelines (QRG), E-E-A-T, and Needs Met ratings",
+      "version": "1.0.1",
       "author": {
         "name": "Ali Kazim"
       },
       "category": "seo",
-      "keywords": ["seo", "search", "google"]
+      "keywords": ["seo", "search-quality-rater", "google", "qrg", "eeat", "content-quality", "search", "e-e-a-t", "needs-met"]
     },
     {
       "name": "security",
       "source": "./plugins/security",
-      "description": "Security and reconnaissance tools — web technology fingerprinting via WhatWeb (1800+ plugins)",
-      "version": "1.1.0",
+      "description": "Claude Code security skills with MCP servers — web technology fingerprinting via WhatWeb and OSINT domain intelligence via theHarvester (Model Context Protocol)",
+      "version": "1.2.0",
       "author": {
         "name": "Ali Kazim"
       },
       "category": "security",
-      "keywords": ["security", "reconnaissance", "tech-detection", "wappalyzer", "whatweb"]
+      "keywords": ["security", "reconnaissance", "tech-detection", "whatweb", "theharvester", "mcp-server", "osint", "fingerprinting", "tech-stack"]
     }
   ]
 }

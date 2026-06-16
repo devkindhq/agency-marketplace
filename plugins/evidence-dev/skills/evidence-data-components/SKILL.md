@@ -4,6 +4,12 @@ description: Evidence.dev data display components — BigValue, DataTable, Delta
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Add a data table, metric card, or delta indicator to a page
+- Display a single value, KPI, or change metric
+- Use BigValue, DataTable, Delta, or Value components
+
 # Evidence Data Display Components
 
 ## Quick Reference
@@ -451,3 +457,6 @@ Margin delta: <Value data={report} column=margin_delta fmt=pct1 redNegatives=tru
 | `+0.0%;-0.0%;0.0%` | +12.3% / -12.3% / 0.0% (Excel signed format) |
 
 Full format reference: `/core-concepts/formatting`
+
+## Parallelisation
+Safe — writes only to .md page files.

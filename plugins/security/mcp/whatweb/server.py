@@ -18,6 +18,7 @@ import uuid
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
@@ -74,6 +75,26 @@ class ScanResult(BaseModel):
 scan_results: dict[str, ScanResult] = {}
 active_scans: set[str] = set()
 
+MAX_RESULTS = 100
+
+
+def _evict_if_needed(results: dict) -> None:
+    while len(results) > MAX_RESULTS:
+        results.pop(next(iter(results)))
+
+
+def _validate_target(target: str) -> str | None:
+    """Returns error message if invalid, None if valid."""
+    t = target.strip()
+    if t.startswith('-'):
+        return "Invalid target: must not start with '-'"
+    parsed = urlparse(t if '://' in t else f'https://{t}')
+    if parsed.scheme not in ('http', 'https', ''):
+        return f"Invalid scheme: {parsed.scheme}"
+    if not parsed.netloc and not parsed.path:
+        return "Invalid target: no host found"
+    return None
+
 AGGRESSION_LEVELS = {
     "stealthy": 1,
     "passive": 1,
@@ -120,6 +141,18 @@ async def run_whatweb_scan(
     aggression: str = "normal",
     timeout: int | None = None,
 ) -> ScanResult:
+    validation_error = _validate_target(target)
+    if validation_error:
+        scan_id = str(uuid.uuid4())[:8]
+        return ScanResult(
+            scan_id=scan_id,
+            target=target,
+            started_at=datetime.now(),
+            completed_at=datetime.now(),
+            status="error",
+            error=validation_error,
+        )
+
     scan_id = str(uuid.uuid4())[:8]
     output_file = Path(settings.output_dir) / f"whatweb_{scan_id}.json"
 
@@ -128,6 +161,7 @@ async def run_whatweb_scan(
         target=target,
         started_at=datetime.now(),
     )
+    _evict_if_needed(scan_results)
     scan_results[scan_id] = result
     active_scans.add(scan_id)
 
@@ -170,7 +204,7 @@ async def run_whatweb_scan(
 
         result.status = "completed" if process.returncode == 0 else "failed"
         if process.returncode != 0:
-            result.error = stderr.decode()
+            result.error = stderr.decode()[:500]
 
     except asyncio.TimeoutError:
         result.status = "timeout"

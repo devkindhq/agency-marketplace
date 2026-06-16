@@ -4,6 +4,13 @@ description: Evidence.dev map components — AreaMap, BaseMap, BubbleMap, PointM
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Add a map to an Evidence.dev page ("show this by region", "choropleth map", "bubble map")
+- Display geographic or location-based data
+- Use AreaMap, BubbleMap, or PointMap components
+Note: GeoJSON files may need to be fetched via WebFetch or Bash if not already present.
+
 # Evidence Map Components
 
 Five map components for geographic data visualization. All are built on Leaflet (except USMap which uses ECharts). Maps auto-zoom to fit the data unless overridden.
@@ -483,3 +490,6 @@ colorPalette={[['yellow','yellow'],['orange','orange'],['red','red'],['darkred',
 ```svelte
 colorPalette={['#C65D47', '#5BAF7A', '#4A8EBA', '#D35B85', '#E1C16D', '#6F5B9A', '#4E8D8D']}
 ```
+
+## Parallelisation
+Safe — writes only to .md page files. GeoJSON downloads are read-only side effects.

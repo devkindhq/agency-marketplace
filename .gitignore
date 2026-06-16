@@ -1,0 +1,15 @@
+.env
+.env.*
+*.env
+.claude/settings.local.json
+plugins/*/mcp/*/output/
+*.key
+*.pem
+*.p12
+*.pfx
+.DS_Store
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+node_modules/

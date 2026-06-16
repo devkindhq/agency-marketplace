@@ -78,6 +78,21 @@ They're on a standard Shopify setup with an older theme stack (Bootstrap/jQuery)
 - CRO/analytics work — GTM is set up, so they're tracking, and may want more from it
 ---
 
+## Parallelisation
+Safe — this skill is stateless and read-only (HTTP scan only). Multiple tech-detector agents can run simultaneously against different URLs with no conflicts or side effects.
+
+## Machine-readable Return Contract
+When invoked by an orchestrator agent collecting results for multiple targets, return a JSON envelope alongside the markdown report:
+```json
+{
+  "url": "<scanned URL>",
+  "cms": "<platform or null>",
+  "stack": ["<tech1>", "<tech2>"],
+  "analysis_angles": ["<angle1>", "<angle2>"]
+}
+```
+The orchestrator uses this to aggregate and sort results without parsing the markdown.
+
 ## Notes
 
 - If http_status is not 200, flag it ("site may be down or blocking scanners")

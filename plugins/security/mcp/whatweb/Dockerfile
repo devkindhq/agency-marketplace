@@ -1,7 +1,7 @@
 # WhatWeb MCP Server
 # Web technology fingerprinting
 
-FROM ruby:3.2-alpine
+FROM ruby:3.2.8-alpine
 
 LABEL org.opencontainers.image.source="https://github.com/FuzzingLabs/offensive-security-mcps"
 LABEL org.opencontainers.image.description="WhatWeb MCP Server - Web technology fingerprinting"
@@ -24,7 +24,7 @@ RUN apk add --no-cache \
 RUN git clone --depth 1 https://github.com/urbanadventurer/WhatWeb.git /opt/whatweb && \
     cd /opt/whatweb && bundle install --without development test && \
     ln -s /opt/whatweb/whatweb /usr/local/bin/whatweb && \
-    apk del build-base ruby-dev
+    apk del build-base ruby-dev git
 
 RUN whatweb --version
 

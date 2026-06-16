@@ -1,8 +1,13 @@
-# Agency Marketplace
+# Agency Marketplace — Claude Code Plugins & Skills
 
-A domain-based Claude Code plugin marketplace by [DevKind](https://devkind.com.au). Each domain is a plugin, each skill lives inside it.
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Plugins](https://img.shields.io/badge/plugins-3-green)
+![Skills](https://img.shields.io/badge/skills-11-green)
+![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-blueviolet)
 
-Built for teams that work with real data — analytics, reporting, SEO, and beyond.
+Agency Marketplace is a collection of Claude Code plugins and skills built by DevKind. Each plugin bundles domain-specific AI agent skills you can install into Claude Code in one command. Some plugins also ship MCP servers (Model Context Protocol) for live tool-use capabilities -- for example, the security plugin runs WhatWeb via Docker as an MCP server.
+
+Repository: https://github.com/devkindhq/agency-marketplace
 
 ## Structure
 
@@ -19,12 +24,20 @@ plugins/
 │       ├── evidence-data-sources    ← BigQuery, DuckDB, Postgres, Snowflake...
 │       ├── evidence-cli             ← install, dev, build, deploy
 │       └── evidence-custom          ← custom Svelte components, plugin dev
-└── seo/
+├── seo/
+│   └── skills/
+│       └── search-quality-rater     ← Google Quality Rater Guidelines (E-E-A-T)
+└── security/
     └── skills/
-        └── search-quality-rater     ← Google Quality Rater Guidelines (E-E-A-T)
+        ├── tech-detector            ← Web tech fingerprinting via WhatWeb MCP server
+        └── harvester                ← OSINT domain intelligence via theHarvester MCP server
 ```
 
 ---
+
+## Prerequisites
+- [Claude Code](https://claude.ai/code) CLI installed
+- [Docker](https://docs.docker.com/get-docker/) -- required for the security plugin's MCP servers (WhatWeb, theHarvester)
 
 ## Install
 
@@ -87,6 +100,19 @@ claude plugin marketplace update agency-marketplace
 | Skill | What it covers |
 |-------|---------------|
 | `search-quality-rater` | Evaluate content against Google's Search Quality Rater Guidelines — E-E-A-T, Page Quality, Needs Met |
+
+---
+
+### security
+
+> Web tech fingerprinting and OSINT domain intelligence via WhatWeb and theHarvester MCP servers.
+
+Requires Docker. MCP servers pull from Docker Hub automatically on first use.
+
+| Skill | What it covers |
+|-------|---------------|
+| `tech-detector` | Fingerprint web technology stacks using WhatWeb (CMS, frameworks, servers, analytics, CDN, and more) |
+| `harvester` | OSINT domain intelligence: subdomains, emails, IPs, and open-source data via theHarvester |
 
 ---
 

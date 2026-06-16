@@ -4,6 +4,12 @@ description: Evidence.dev chart components — LineChart, BarChart, AreaChart, S
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Add a chart to an Evidence.dev page ("add a bar chart", "show this data as a line graph", "create a scatter plot")
+- Change an existing chart type or configuration
+- Understand which chart component to use for a given dataset shape
+
 # Evidence.dev Chart Components
 
 Evidence charts are written as Svelte/HTML components inside `.md` files. Data is provided via SQL query blocks, then referenced by query name in curly braces. All charts are built on ECharts and support synchronized tooltips, annotations, and custom ECharts config overrides.
@@ -1115,3 +1121,6 @@ let options = {
 | `symbolBorderWidth` / `symbolBorderColor` | Symbol border |
 | `labelWidth` | `fit` / number |
 | `bold` / `italic` | Label text formatting |
+
+## Parallelisation
+Safe — writes only to .md page files. Multiple agents can add different charts to different pages simultaneously.

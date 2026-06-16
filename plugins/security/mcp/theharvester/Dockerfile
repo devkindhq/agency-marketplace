@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12.9-slim
 
 LABEL org.opencontainers.image.description="theHarvester MCP Server - OSINT email, subdomain and contact harvesting"
 LABEL org.opencontainers.image.licenses="MIT"
@@ -14,13 +14,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-ENV PATH="/root/.local/bin:$PATH"
+RUN pip install --no-cache-dir uv==0.5.0
 
 # Install theHarvester
 RUN git clone --depth 1 https://github.com/laramies/theHarvester.git /opt/theharvester && \
     cd /opt/theharvester && \
     uv sync --no-dev
+RUN apt-get purge -y --auto-remove git curl && rm -rf /var/lib/apt/lists/*
 
 # MCP layer runs on system Python; theHarvester runs via its own venv
 WORKDIR /app

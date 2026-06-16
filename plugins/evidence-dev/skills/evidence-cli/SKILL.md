@@ -4,6 +4,12 @@ description: Evidence.dev CLI commands, project setup, deployment configuration 
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Run Evidence.dev commands ("run sources", "build the project", "start dev server", "deploy")
+- Configure npm scripts or project setup
+- Understand CLI flags or deployment options
+
 # Evidence CLI & Deployment
 
 ## Level 1 — The Three Commands You Need Every Day
@@ -331,3 +337,6 @@ npm --prefix ./reports run dev
 ```
 
 This co-locates modelling changes (`/models`) and reporting changes (`/reports`) in the same commits.
+
+## Parallelisation
+Caution — npm run dev and npm run sources write to shared cache/output directories. Do not run alongside other Evidence CLI agents on the same project.

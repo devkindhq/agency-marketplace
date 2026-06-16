@@ -4,6 +4,12 @@ description: Evidence.dev UI layout components — Accordion, Alert, Grid, Tabs,
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Add layout structure to an Evidence.dev page (tabs, grids, collapsibles)
+- Format or style a page without changing its data
+- Use Grid, Tabs, Details, Modal, or Alert components
+
 # Evidence UI Components
 
 Evidence.dev provides a set of built-in UI components for layout, navigation, content organization, and print formatting. All components are used directly in `.md` pages as HTML-style tags. No imports required.
@@ -752,3 +758,6 @@ Revenue grew 23% YoY <Info description="Compared to same period prior year, cons
 
 <LinkButton url="/admin/data-sources">Manage Data Sources</LinkButton>
 ```
+
+## Parallelisation
+Safe — writes only to .md page files.

@@ -12,6 +12,7 @@ Tools:
 import asyncio
 import json
 import logging
+import re
 import uuid
 from datetime import datetime
 from pathlib import Path
@@ -70,18 +71,49 @@ class HarvestResult(BaseModel):
 harvest_results: dict[str, HarvestResult] = {}
 active_harvests: set[str] = set()
 
+MAX_RESULTS = 100
+
+
+def _evict_if_needed(results: dict) -> None:
+    while len(results) > MAX_RESULTS:
+        results.pop(next(iter(results)))
+
+
+def _validate_domain(domain: str) -> str | None:
+    """Returns error message if invalid, None if valid."""
+    d = domain.strip()
+    if d.startswith('-'):
+        return "Invalid domain: must not start with '-'"
+    if not re.match(r'^[a-zA-Z0-9.\-]+$', d):
+        return "Invalid domain: contains disallowed characters"
+    return None
+
 
 def _clean_list(items: list) -> list[str]:
     return [str(i).strip() for i in items if i]
 
 
 async def run_harvest(domain: str, sources: list[str], limit: int = 200, timeout: int | None = None) -> HarvestResult:
+    validation_error = _validate_domain(domain)
+    if validation_error:
+        harvest_id = str(uuid.uuid4())[:8]
+        return HarvestResult(
+            harvest_id=harvest_id,
+            domain=domain,
+            sources=sources,
+            started_at=datetime.now(),
+            completed_at=datetime.now(),
+            status="error",
+            error=validation_error,
+        )
+
     harvest_id = str(uuid.uuid4())[:8]
     output_filename = f"harvest_{harvest_id}"
     output_dir = Path(settings.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     result = HarvestResult(harvest_id=harvest_id, domain=domain, sources=sources, started_at=datetime.now())
+    _evict_if_needed(harvest_results)
     harvest_results[harvest_id] = result
     active_harvests.add(harvest_id)
 
@@ -236,7 +268,10 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
             elif sources_arg == "all":
                 sources = ALL_SOURCES
             else:
-                sources = [s.strip() for s in sources_arg.split(",")]
+                valid = set(ALL_SOURCES)
+                sources = [s.strip() for s in sources_arg.split(",") if s.strip() in valid]
+                if not sources:
+                    return [TextContent(type="text", text="No valid sources specified. Valid sources: " + ", ".join(sorted(ALL_SOURCES)))]
 
             result = await run_harvest(
                 domain=arguments["domain"],

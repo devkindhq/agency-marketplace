@@ -4,6 +4,12 @@ description: Evidence.dev input components for filtering — Dropdown, TextInput
 version: 1.0.0
 ---
 
+## When to use
+Invoke when the user asks to:
+- Add a filter, dropdown, date picker, or search box to a page
+- Make a page interactive or let users filter the displayed data
+- Use DateRange, Dropdown, TextInput, ButtonGroup, or Slider components
+
 # Evidence Input Components
 
 ## Level 1 — What each input does, minimal syntax, and the variable it creates
@@ -472,3 +478,6 @@ where category = '${inputs.category.value}'
 Showing {inputs.category.value} orders from {inputs.date_range.start} to {inputs.date_range.end}
 with sales above {inputs.min_sales}
 ```
+
+## Parallelisation
+Safe — writes only to .md page files.

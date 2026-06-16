@@ -167,6 +167,27 @@ Always use this exact structure:
 
 ---
 
+## Tools Required
+- No MCP tools or Bash required — this skill uses Claude's reasoning only.
+- If given a URL instead of page content, use the Read tool (if it's a local file) or WebFetch (if it's a live URL) to retrieve the content first.
+- Reference files in the skill's `references/` directory are loaded via the Read tool using their paths relative to this SKILL.md.
+
+## Parallelisation
+Safe — this skill is read-only analysis with no side effects. Multiple search-quality-rater agents can evaluate different URLs simultaneously.
+
+## Machine-readable Return Contract
+When invoked by an orchestrator running batch content audits, also return:
+```json
+{
+  "url": "<evaluated URL or page title>",
+  "pq_rating": "Highest|High|Medium|Low|Lowest",
+  "eeat": "Strong|Adequate|Weak",
+  "nm_rating": "Fully Meets|Highly Meets|Meets|Fails to Meet",
+  "top_issues": ["<issue1>", "<issue2>", "<issue3>"]
+}
+```
+The orchestrator uses this to prioritise pages for remediation without reading full reports.
+
 ## Calibration Notes
 
 - Rate pages as a typical user in the page's target locale — not as an SEO expert

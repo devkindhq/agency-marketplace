@@ -1,10 +1,10 @@
 {
   "whatweb": {
     "command": "docker",
-    "args": ["run", "-i", "--rm", "devkind/whatweb-mcp:latest"]
+    "args": ["run", "-i", "--rm", "--memory=512m", "--cpus=0.5", "--pids-limit=100", "devkind/whatweb-mcp:latest"]
   },
   "theharvester": {
     "command": "docker",
-    "args": ["run", "-i", "--rm", "devkind/theharvester-mcp:latest"]
+    "args": ["run", "-i", "--rm", "--memory=512m", "--cpus=0.5", "--pids-limit=100", "devkind/theharvester-mcp:latest"]
   }
 }
