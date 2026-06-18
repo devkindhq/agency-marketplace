@@ -1,6 +1,6 @@
 ---
 name: tech-detector
-description: Detect the technology stack of any website for stack analysis. Use when someone shares a prospect URL, asks "what are they running", "what's their stack", or wants to research a client/competitor. Runs WhatWeb scan and returns sales-relevant insights and pitch angles.
+description: Detect the technology stack of any website. Use when someone shares a URL, asks "what are they running", "what's their stack", or wants to audit a site or research a competitor. Runs WhatWeb scan and returns stack insights and analysis angles.
 tools: [mcp__plugin_security_whatweb__whatweb_scan]
 ---
 
@@ -43,19 +43,19 @@ Interpret the stack in business terms:
 ### 3. Analysis Angles
 Map detected tech to specific opportunities:
 
-| Detected | Opportunity |
+| Detected | Observation |
 |----------|-------------|
-| Shopify (Bootstrap/jQuery theme) | Custom Shopify theme rebuild, headless Shopify, performance audit |
-| Shopify (no GTM/analytics) | Analytics setup, conversion optimisation |
-| WordPress | Performance, security, migration to modern stack |
-| Webflow | Custom development beyond Webflow's limits, CMS migration |
-| No identifiable platform | Likely custom — ask about their dev team, maintenance pain |
-| jQuery / Bootstrap (no modern framework) | Frontend modernisation, React/Vue migration |
-| No HTTPS / missing HSTS | Security audit, quick win to open the conversation |
-| Google Tag Manager | Active marketing team — pitch tracking, CRO, analytics |
-| Cloudflare | They care about performance/security — lean into that |
-| Vercel / Next.js | Modern team, may need backend/API work or design system |
-| No CDN detected | Performance pitch — "your competitors are likely faster" |
+| Shopify (Bootstrap/jQuery theme) | Likely older theme — performance and modernisation opportunity |
+| Shopify (no GTM/analytics) | Analytics gap — no conversion tracking in place |
+| WordPress | Common maintenance pain points: performance, security, plugin sprawl |
+| Webflow | Hosted CMS constraints — custom dev or migration may be needed at scale |
+| No identifiable platform | Likely custom build — dev team dependency, higher maintenance cost |
+| jQuery / Bootstrap (no modern framework) | Legacy frontend — migration to React/Vue may be warranted |
+| No HTTPS / missing HSTS | Basic security gap, quick to address |
+| Google Tag Manager | Active marketing instrumentation in place |
+| Cloudflare | Performance and security aware — sophisticated infra |
+| Vercel / Next.js | Modern stack, likely needs backend/API or design system work |
+| No CDN detected | Performance risk — static assets served from origin |
 
 ## Output format
 
@@ -72,10 +72,10 @@ Keep it tight and actionable. Example:
 **What this tells us:**
 They're on a standard Shopify setup with an older theme stack (Bootstrap/jQuery). GTM presence means there's an active marketing team. Cloudflare suggests someone technical is involved, even if their dev team is small.
 
-**Pitch angles:**
-- Custom Shopify theme (modern, performance-focused) — their current theme is likely slow
+**Analysis angles:**
+- Custom Shopify theme (modern, performance-focused) — Bootstrap/jQuery theme is likely slow
 - Headless Shopify if they're hitting platform limits
-- CRO/analytics work — GTM is set up, so they're tracking, and may want more from it
+- Analytics depth — GTM is present, tracking baseline is in place
 ---
 
 ## Parallelisation

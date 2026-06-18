@@ -380,7 +380,7 @@ EVIDENCE_SOURCE__MY_PG__host=db.example.com
 EVIDENCE_SOURCE__MY_PG__port=5432
 EVIDENCE_SOURCE__MY_PG__database=analytics
 EVIDENCE_SOURCE__MY_PG__user=evidence_user
-EVIDENCE_SOURCE__MY_PG__password=REPLACE_ME_PASSWORD
+EVIDENCE_SOURCE__MY_PG__password=<your-password>
 
 # BigQuery source named "my_bq"
 EVIDENCE_SOURCE__MY_BQ__project_id=my-gcp-project
@@ -397,7 +397,7 @@ EVIDENCE_SOURCE__MY_SF__username=my_user
 EVIDENCE_SOURCE__MY_SF__database=MY_DB
 EVIDENCE_SOURCE__MY_SF__warehouse=MY_WH
 EVIDENCE_SOURCE__MY_SF__authenticator=userpass
-EVIDENCE_SOURCE__MY_SF__password=REPLACE_ME_PASSWORD
+EVIDENCE_SOURCE__MY_SF__password=<your-password>
 ```
 
 Source names in env vars are uppercased. Nested options (e.g. `ssl.sslmode`) use double underscores for nesting.
@@ -510,7 +510,7 @@ options:
   role: MY_ROLE
   schema: PUBLIC
   authenticator: userpass
-  password: REPLACE_ME_PASSWORD
+  password: <your-password>
 ```
 
 ### Full Snowflake connection.yaml (Key-Pair JWT)

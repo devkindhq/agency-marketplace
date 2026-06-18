@@ -13,7 +13,7 @@
       "name": "evidence-dev",
       "source": "./plugins/evidence-dev",
       "description": "Claude Code skills for Evidence.dev — 9 skills covering SQL queries, charts, data components, maps, UI, data sources, CLI and custom Svelte components",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "author": {
         "name": "Ali Kazim"
       },
@@ -35,7 +35,7 @@
       "name": "security",
       "source": "./plugins/security",
       "description": "Claude Code security skills with MCP servers — web technology fingerprinting via WhatWeb and OSINT domain intelligence via theHarvester (Model Context Protocol)",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "author": {
         "name": "Ali Kazim"
       },

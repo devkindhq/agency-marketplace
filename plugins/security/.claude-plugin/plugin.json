@@ -1,6 +1,6 @@
 {
   "name": "security",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Security and reconnaissance tools — web technology fingerprinting, stack detection, and related skills",
   "author": {
     "name": "Ali Kazim"
